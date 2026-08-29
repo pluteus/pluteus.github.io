@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>制作アプリ一覧 — ブラウザだけで動くWebアプリたち</title>
-<meta name="description" content="顔トラッキングVRMビューア、手書きメモアプリ「マスガキ」、計算メモ帳「memo_calc」。個人制作のブラウザ完結型Webアプリ一覧ページ。">
+<meta name="description" content="VRM AIエージェント「VRMちゃんと！」、手書きメモアプリ「マスガキ」、計算メモ帳「memo_calc」。個人制作のブラウザ完結型Webアプリ一覧ページ。">
 <meta name="theme-color" content="#0b0c10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,7 +141,8 @@
     --accent: var(--a1);
     --accent-soft: var(--a1-soft);
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     background: linear-gradient(180deg, var(--surface), var(--bg-soft));
     border: 1px solid var(--line);
@@ -150,6 +151,7 @@
     overflow: hidden;
     transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   }
+  .card-body{ min-width: 0; }
   .card:nth-child(2){ --accent: var(--a2); --accent-soft: var(--a2-soft); }
   .card:nth-child(3){ --accent: var(--a3); --accent-soft: var(--a3-soft); }
 
@@ -264,6 +266,55 @@
   }
   .card:hover .card-cta svg{ transform: translateX(4px); }
 
+  /* ---------- Screenshot preview ---------- */
+
+  .card-shot{
+    position: relative;
+    margin: 24px auto 4px;
+    width: 148px;
+    flex-shrink: 0;
+  }
+  .card-shot .phone{
+    position: relative;
+    border-radius: 20px;
+    padding: 6px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 24px 46px -22px rgba(0,0,0,0.65);
+  }
+  .card-shot .phone::after{
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 4px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.35);
+  }
+  .card-shot img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 14px;
+  }
+  .card-shot .shot-tag{
+    position: absolute;
+    bottom: -10px;
+    right: -8px;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
   /* ---------- Footer ---------- */
 
   footer{
@@ -282,6 +333,9 @@
 
   @media (min-width: 760px){
     .card-head{ align-items: center; }
+    .card{ flex-direction: row; align-items: flex-start; gap: 32px; }
+    .card-body{ flex: 1; }
+    .card-shot{ margin: 6px 0 0; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -298,7 +352,7 @@
     <h1 class="title">サーバーを持たない、<span class="accent">3つの小さな道具箱。</span></h1>
     <p class="lede">
       どれもインストール不要、1本のブラウザだけで完結するWebアプリです。
-      顔の動きで覗き込む3Dキャラクター、指で書く手書きメモ、数式まじりの計算ノート——
+      顔の動きに反応し、会話も通訳もこなす3Dキャラクター、指で書く手書きメモ、数式まじりの計算ノート——
       それぞれ違う手ざわりの実験を、ここに並べました。
     </p>
     <div class="count-row">
@@ -311,95 +365,120 @@
   <main>
     <div class="cards">
 
-      <!-- Card 1: 顔トラッキングVRMビューア -->
+      <!-- Card 1: VRMちゃんと！ -->
       <a class="card" href="https://pluteus.github.io/man_in_the_mirror/about.html">
-        <div class="card-top">
-          <div class="card-head">
-            <div class="card-glyph">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="11" r="3"/><path d="M8 17c0-2 1.8-3 4-3s4 1 4 3"/></svg>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-head">
+              <div class="card-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="11" r="3"/><path d="M8 17c0-2 1.8-3 4-3s4 1 4 3"/></svg>
+              </div>
+              <div>
+                <h2 class="card-title">VRMちゃんと！</h2>
+                <p class="card-sub">man_in_the_mirror</p>
+              </div>
             </div>
-            <div>
-              <h2 class="card-title">顔トラッキングVRMビューア</h2>
-              <p class="card-sub">man_in_the_mirror</p>
-            </div>
+            <span class="card-num">01</span>
           </div>
-          <span class="card-num">01</span>
+          <p class="card-line">覗き込むだけの鏡から、話しかけられるAIエージェントへ。</p>
+          <p class="card-desc">
+            スマホのインカメラで顔の位置を読み取り、視点の動きに合わせて3D空間を視差表示（off-axis）。
+            画面の向こうに本当にVRMキャラクターが立っているかのような感覚を再現しつつ、
+            カメラ映像・画面・現在地を踏まえてGemini Liveとリアルタイムに会話し、頼めば同時通訳もこなすAIキャラクターです。
+          </p>
+          <div class="tags">
+            <span>VRM / VRMA</span>
+            <span>顔トラッキング (MediaPipe)</span>
+            <span>Gemini Live 会話</span>
+            <span>通訳 / 位置情報</span>
+            <span>YouTube連携</span>
+          </div>
+          <span class="card-cta">概要を見る
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
         </div>
-        <p class="card-line">画面はただの板じゃない。そこは覗き窓だ。</p>
-        <p class="card-desc">
-          スマホのインカメラで顔の位置を読み取り、視点の動きに合わせて3D空間を視差表示（off-axis）。
-          画面の向こうに本当にVRMキャラクターが立っているかのような感覚を目指したビューアです。
-          Gemini Live APIとの音声会話にも対応し、話しかければ声で応答します。
-        </p>
-        <div class="tags">
-          <span>VRM / VRMA</span>
-          <span>顔トラッキング (MediaPipe)</span>
-          <span>Gemini Live 音声会話</span>
-          <span>WebXR / Meta Quest 2</span>
+        <div class="card-shot">
+          <div class="phone">
+            <img src="man_in_the_mirror/screenshot.jpeg" alt="VRMちゃんと！のスクリーンショット" loading="lazy" width="640" height="853">
+          </div>
+          <span class="shot-tag">実機での動作</span>
         </div>
-        <span class="card-cta">概要を見る
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
       </a>
 
       <!-- Card 2: マスガキ -->
       <a class="card" href="https://pluteus.github.io/handwriting/about.html">
-        <div class="card-top">
-          <div class="card-head">
-            <div class="card-glyph">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l3.5-1 10-10a1.8 1.8 0 0 0-2.5-2.5l-10 10L4 20z"/><path d="M13 6l2.5 2.5"/></svg>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-head">
+              <div class="card-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l3.5-1 10-10a1.8 1.8 0 0 0-2.5-2.5l-10 10L4 20z"/><path d="M13 6l2.5 2.5"/></svg>
+              </div>
+              <div>
+                <h2 class="card-title">マスガキ</h2>
+                <p class="card-sub">handwriting memo</p>
+              </div>
             </div>
-            <div>
-              <h2 class="card-title">マスガキ</h2>
-              <p class="card-sub">handwriting memo</p>
-            </div>
+            <span class="card-num">02</span>
           </div>
-          <span class="card-num">02</span>
+          <p class="card-line">指で書いて、そのままメモにする。</p>
+          <p class="card-desc">
+            左右2枚のキャンバスに指で交互に文字を書くと、手書きのまま罫線エリアに並んでいく手書きメモアプリ。
+            走り書きや速記、筆談にも使えます。インストール不要・オフライン対応のPWAで、書いた内容は端末に自動保存されます。
+          </p>
+          <div class="tags">
+            <span>2キャンバス交互入力</span>
+            <span>自動確定タイマー</span>
+            <span>PWA / オフライン対応</span>
+            <span>画像として書き出し・共有</span>
+          </div>
+          <span class="card-cta">概要を見る
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
         </div>
-        <p class="card-line">指で書いて、そのままメモにする。</p>
-        <p class="card-desc">
-          左右2枚のキャンバスに指で交互に文字を書くと、手書きのまま罫線エリアに並んでいく手書きメモアプリ。
-          走り書きや速記、筆談にも使えます。インストール不要・オフライン対応のPWAで、書いた内容は端末に自動保存されます。
-        </p>
-        <div class="tags">
-          <span>2キャンバス交互入力</span>
-          <span>自動確定タイマー</span>
-          <span>PWA / オフライン対応</span>
-          <span>画像として書き出し・共有</span>
+        <div class="card-shot">
+          <div class="phone">
+            <img src="handwriting/ogp.png" alt="マスガキの手書きメモ画面のスクリーンショット" loading="lazy" width="640" height="853">
+          </div>
+          <span class="shot-tag">実機での動作</span>
         </div>
-        <span class="card-cta">概要を見る
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
       </a>
 
       <!-- Card 3: memo_calc -->
       <a class="card" href="https://pluteus.github.io/memo_calc/about.html">
-        <div class="card-top">
-          <div class="card-head">
-            <div class="card-glyph">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h4M8 16h6"/></svg>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-head">
+              <div class="card-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h4M8 16h6"/></svg>
+              </div>
+              <div>
+                <h2 class="card-title">memo_calc</h2>
+                <p class="card-sub">note with calculation</p>
+              </div>
             </div>
-            <div>
-              <h2 class="card-title">memo_calc</h2>
-              <p class="card-sub">note with calculation</p>
-            </div>
+            <span class="card-num">03</span>
           </div>
-          <span class="card-num">03</span>
+          <p class="card-line">書けば、右に答えが出る。</p>
+          <p class="card-desc">
+            文章の中に数式を混ぜて書けるメモ帳。数字や式を含む行だけが自動で計算され、右側にリアルタイムで結果が並びます。
+            「S1」のような行番号参照や sum / avg などの関数にも対応した、片手でも使える計算ノートです。
+          </p>
+          <div class="tags">
+            <span>S参照 (行番号呼び出し)</span>
+            <span>sum / avg / sqrt 等の関数</span>
+            <span>3モード切替キーボード</span>
+            <span>PWA / オフライン対応</span>
+          </div>
+          <span class="card-cta">概要を見る
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
         </div>
-        <p class="card-line">書けば、右に答えが出る。</p>
-        <p class="card-desc">
-          文章の中に数式を混ぜて書けるメモ帳。数字や式を含む行だけが自動で計算され、右側にリアルタイムで結果が並びます。
-          「S1」のような行番号参照や sum / avg などの関数にも対応した、片手でも使える計算ノートです。
-        </p>
-        <div class="tags">
-          <span>S参照 (行番号呼び出し)</span>
-          <span>sum / avg / sqrt 等の関数</span>
-          <span>3モード切替キーボード</span>
-          <span>PWA / オフライン対応</span>
+        <div class="card-shot">
+          <div class="phone">
+            <img src="memo_calc /screenshot.png" alt="memo_calcの計算ノート画面のスクリーンショット" loading="lazy" width="640" height="853">
+          </div>
+          <span class="shot-tag">実機での動作</span>
         </div>
-        <span class="card-cta">概要を見る
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
       </a>
 
     </div>
