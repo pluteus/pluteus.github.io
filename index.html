@@ -271,40 +271,44 @@
   .card-shot{
     position: relative;
     margin: 24px auto 4px;
-    width: 148px;
+    width: 100%;
+    max-width: 320px;
     flex-shrink: 0;
   }
-  .card-shot .phone{
+  .card-shot .frame{
     position: relative;
-    border-radius: 20px;
-    padding: 6px;
+    border-radius: 12px;
+    overflow: hidden;
     background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
     border: 1px solid var(--line-strong);
     box-shadow: 0 24px 46px -22px rgba(0,0,0,0.65);
   }
-  .card-shot .phone::after{
-    content: "";
-    position: absolute;
-    top: 14px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 34px;
-    height: 4px;
-    border-radius: 3px;
-    background: rgba(0,0,0,0.35);
+  .card-shot .frame-bar{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 12px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--line);
+  }
+  .card-shot .frame-bar span{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ink-faint);
+    opacity: 0.55;
   }
   .card-shot img{
     display: block;
     width: 100%;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 12 / 7;
     object-fit: cover;
     object-position: top center;
-    border-radius: 14px;
   }
   .card-shot .shot-tag{
     position: absolute;
     bottom: -10px;
-    right: -8px;
+    right: 12px;
     font-size: 10.5px;
     letter-spacing: 0.04em;
     color: var(--accent);
@@ -334,8 +338,8 @@
   @media (min-width: 760px){
     .card-head{ align-items: center; }
     .card{ flex-direction: row; align-items: flex-start; gap: 32px; }
-    .card-body{ flex: 1; }
-    .card-shot{ margin: 6px 0 0; }
+    .card-body{ flex: 1; min-width: 0; }
+    .card-shot{ margin: 6px 0 0; width: 260px; max-width: 260px; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -398,8 +402,9 @@
           </span>
         </div>
         <div class="card-shot">
-          <div class="phone">
-            <img src="man_in_the_mirror/screenshot.jpeg" alt="VRMちゃんと！のスクリーンショット" loading="lazy" width="640" height="853">
+          <div class="frame">
+            <div class="frame-bar"><span></span><span></span><span></span></div>
+            <img src="man_in_the_mirror/screenshot.jpeg" alt="VRMちゃんと！のスクリーンショット" loading="lazy" width="1020" height="591">
           </div>
           <span class="shot-tag">実機での動作</span>
         </div>
@@ -436,8 +441,9 @@
           </span>
         </div>
         <div class="card-shot">
-          <div class="phone">
-            <img src="handwriting/ogp.png" alt="マスガキの手書きメモ画面のスクリーンショット" loading="lazy" width="640" height="853">
+          <div class="frame">
+            <div class="frame-bar"><span></span><span></span><span></span></div>
+            <img src="handwriting/ogp.png" alt="マスガキの手書きメモ画面のスクリーンショット" loading="lazy" width="1023" height="595">
           </div>
           <span class="shot-tag">実機での動作</span>
         </div>
@@ -474,8 +480,9 @@
           </span>
         </div>
         <div class="card-shot">
-          <div class="phone">
-            <img src="memo_calc /screenshot.png" alt="memo_calcの計算ノート画面のスクリーンショット" loading="lazy" width="640" height="853">
+          <div class="frame">
+            <div class="frame-bar"><span></span><span></span><span></span></div>
+            <img src="memo_calc /screenshot.png" alt="memo_calcの計算ノート画面のスクリーンショット" loading="lazy" width="1017" height="595">
           </div>
           <span class="shot-tag">実機での動作</span>
         </div>
