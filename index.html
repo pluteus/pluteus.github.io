@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>制作アプリ一覧 — ブラウザだけで動くWebアプリたち</title>
-<meta name="description" content="VRM AIエージェント「VRMちゃんと！」、手書きメモアプリ「マスガキ」、計算メモ帳「memo_calc」。個人制作のブラウザ完結型Webアプリ一覧ページ。">
+<meta name="description" content="VRM AIエージェント「VRMちゃんと！」、手書きメモアプリ「マスガキ」、計算メモ帳「memo_calc」、店内マップエディタ。個人制作のブラウザ完結型Webアプリ一覧ページ。">
 <meta name="theme-color" content="#0b0c10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,8 @@
     --a2-soft: rgba(255,143,107,0.14);
     --a3: #5eead4; /* memo_calc / mint */
     --a3-soft: rgba(94,234,212,0.14);
+    --a4: #6ea8ff; /* easy_map / blue */
+    --a4-soft: rgba(110,168,255,0.14);
     --serif: "Shippori Mincho", serif;
     --sans: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
   }
@@ -156,6 +158,7 @@
   .card-body{ min-width: 0; }
   .card:nth-child(2){ --accent: var(--a2); --accent-soft: var(--a2-soft); }
   .card:nth-child(3){ --accent: var(--a3); --accent-soft: var(--a3-soft); }
+  .card:nth-child(4){ --accent: var(--a4); --accent-soft: var(--a4-soft); }
 
   .card::before{
     content: "";
@@ -350,14 +353,14 @@
 <div class="wrap">
   <header class="hero">
     <p class="kicker">Browser-only Web Apps</p>
-    <h1 class="title">サーバーを持たない、<span class="accent">3つの小さな道具箱。</span></h1>
+    <h1 class="title">インストール不要<span class="accent">4つのWEBアプリ。</span></h1>
     <p class="lede">
-      どれもインストール不要、1本のブラウザだけで完結するWebアプリです。
-      顔の動きに反応し、会話も通訳もこなす3Dキャラクター、指で書く手書きメモ、数式まじりの計算ノート——
-      それぞれ違う手ざわりの実験を、ここに並べました。
+      どれも、1本のブラウザだけで完結するWebアプリです。
+      顔の動きに反応し、会話も通訳もこなす3Dキャラクター、指で書く手書きメモ、数式まじりの計算ノート、四角を並べて描く店内マップ——
+      それぞれ違う手ざわりの便利ツールを、ここに並べました。
     </p>
     <div class="count-row">
-      <div class="stat"><b>3</b>APPS</div>
+      <div class="stat"><b>4</b>APPS</div>
       <div class="stat"><b>0</b>INSTALL</div>
       <div class="stat"><b>PWA</b>OFFLINE READY</div>
     </div>
@@ -479,6 +482,47 @@
             <div class="frame">
               <div class="frame-bar"><span></span><span></span><span></span></div>
               <img src="memo_calc/screenshot.png" alt="memo_calcの計算ノート画面のスクリーンショット" loading="lazy" width="1017" height="595">
+            </div>
+            <span class="shot-tag">実機での動作</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4: 店内マップエディタ -->
+      <a class="card" href="https://pluteus.github.io/easy_map/about.html">
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-head">
+              <div class="card-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="8" height="18"/><rect x="11" y="3" width="10" height="10"/><rect x="11" y="13" width="10" height="8"/></svg>
+              </div>
+              <div>
+                <h2 class="card-title">店内マップエディタ</h2>
+                <p class="card-sub">easy_map</p>
+              </div>
+            </div>
+            <span class="card-num">04</span>
+          </div>
+          <p class="card-line">四角を置いて、名前を書くだけ。</p>
+          <p class="card-desc">
+            キャンバスの上に四角を並べて売り場を配置していく、ブラウザで動く店内マップ作成ツール。
+            四角はグリッドにぴったり揃い、ダブルタップで名前を書き込めば縦書き・横書きも自動調整。
+            長押しで回転や重なり順を変えられ、完成したマップはPNG画像やJSONとして書き出せます。
+          </p>
+          <div class="tags">
+            <span>グリッドスナップ配置</span>
+            <span>縦書き / 横書き自動調整</span>
+            <span>回転・重なり順変更</span>
+            <span>PNG / JSON 書き出し</span>
+            <span>PWA / オフライン対応</span>
+          </div>
+          <span class="card-cta">概要を見る
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+          <div class="card-shot">
+            <div class="frame">
+              <div class="frame-bar"><span></span><span></span><span></span></div>
+              <img src="easy_map/screenshot.jpg" alt="店内マップエディタの画面。乳製品売り場・野菜売り場・納豆の3つの四角がグリッド上に配置されている。" loading="lazy" width="1080" height="2400">
             </div>
             <span class="shot-tag">実機での動作</span>
           </div>
