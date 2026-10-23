@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>制作アプリ一覧 — ブラウザだけで動くWebアプリたち</title>
-<meta name="description" content="VRM AIエージェント「VRMちゃんと！」、手書きメモアプリ「マスガキ」、計算メモ帳「memo_calc」、店内マップエディタ。個人制作のブラウザ完結型Webアプリ一覧ページ。">
+<meta name="description" content="VRM AIエージェント「VRMちゃんと！」、手書きメモアプリ「マスガキ」、計算メモ帳「memo_calc」、店内マップエディタ、キーフレームマップ。個人制作のブラウザ完結型Webアプリ一覧ページ。">
 <meta name="theme-color" content="#0b0c10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +29,8 @@
     --a3-soft: rgba(94,234,212,0.14);
     --a4: #6ea8ff; /* easy_map / blue */
     --a4-soft: rgba(110,168,255,0.14);
+    --a5: #f472b6; /* movie_sequencer / pink */
+    --a5-soft: rgba(244,114,182,0.14);
     --serif: "Shippori Mincho", serif;
     --sans: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
   }
@@ -159,6 +161,7 @@
   .card:nth-child(2){ --accent: var(--a2); --accent-soft: var(--a2-soft); }
   .card:nth-child(3){ --accent: var(--a3); --accent-soft: var(--a3-soft); }
   .card:nth-child(4){ --accent: var(--a4); --accent-soft: var(--a4-soft); }
+  .card:nth-child(5){ --accent: var(--a5); --accent-soft: var(--a5-soft); }
 
   .card::before{
     content: "";
@@ -353,14 +356,14 @@
 <div class="wrap">
   <header class="hero">
     <p class="kicker">Browser-only Web Apps</p>
-    <h1 class="title">インストール不要<span class="accent">4つのWEBアプリ。</span></h1>
+    <h1 class="title">インストール不要<span class="accent">5つのWEBアプリ。</span></h1>
     <p class="lede">
       どれも、1本のブラウザだけで完結するWebアプリです。
-      顔の動きに反応し、会話も通訳もこなす3Dキャラクター、指で書く手書きメモ、数式まじりの計算ノート、四角を並べて描く店内マップ——
+      顔の動きに反応し、会話も通訳もこなす3Dキャラクター、指で書く手書きメモ、数式まじりの計算ノート、四角を並べて描く店内マップ、画像をつないで動画の流れを組むキーフレームマップ——
       それぞれ違う手ざわりの便利ツールを、ここに並べました。
     </p>
     <div class="count-row">
-      <div class="stat"><b>4</b>APPS</div>
+      <div class="stat"><b>5</b>APPS</div>
       <div class="stat"><b>0</b>INSTALL</div>
       <div class="stat"><b>PWA</b>OFFLINE READY</div>
     </div>
@@ -523,6 +526,44 @@
             <div class="frame">
               <div class="frame-bar"><span></span><span></span><span></span></div>
               <img src="easy_map/screenshot.jpg" alt="店内マップエディタの画面。乳製品売り場・野菜売り場・納豆の3つの四角がグリッド上に配置されている。" loading="lazy" width="1080" height="2400">
+            </div>
+            <span class="shot-tag">実機での動作</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5: キーフレームマップ -->
+      <a class="card" href="https://pluteus.github.io/movie_sequencer/about.html">
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-head">
+              <div class="card-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="6" height="7" rx="1"/><rect x="15" y="4" width="6" height="7" rx="1"/><rect x="9" y="14" width="6" height="7" rx="1"/><path d="M9 7.5h6M18 11v1.5l-6 1.5"/></svg>
+              </div>
+              <div>
+                <h2 class="card-title">キーフレームマップ</h2>
+                <p class="card-sub">movie_sequencer</p>
+              </div>
+            </div>
+            <span class="card-num">05</span>
+          </div>
+          <p class="card-line">画像をつないで、動画の流れを描く。</p>
+          <p class="card-desc">
+            キーフレーム画像を広いキャンバスに並べ、矢印でつないでいくことで動画のシーケンスを組み立てるツール。
+            選択した順・逆順・両方向など接続の向きを切り替えながら、画像と画像のあいだに動画クリップを割り当てて、全体の流れを一枚のマップとして見渡せます。
+          </p>
+          <div class="tags">
+            <span>キーフレームの接続マップ</span>
+            <span>選択順 / 逆順 / 両方向の接続</span>
+            <span>動画クリップの割り当て</span>
+          </div>
+          <span class="card-cta">概要を見る
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+          <div class="card-shot">
+            <div class="frame">
+              <div class="frame-bar"><span></span><span></span><span></span></div>
+              <img src="movie_sequencer/screenshot.jpg" alt="キーフレームマップの画面。キーフレーム画像が矢印でつながれ、動画クリップを挟んで並んでいる。" loading="lazy" width="1016" height="601">
             </div>
             <span class="shot-tag">実機での動作</span>
           </div>
